@@ -1,85 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>웹프 과제</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    /* Style the header */
 /* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
-
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
+  .header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    position: fixed; /* 변경 */
+    width: 100%; /* 변경 */
+    top: 0; /* 변경 */
+    height: 100px;
   }
-}
-</style>
+
+
+    /* Style for login button */
+    .login-button {
+      position: absolute; /* 추가: position 속성을 absolute로 설정 */
+      top: 25%  ; /* 추가: 상위 위치를 50%로 설정 */
+      transform: translateY(-50%); /* 추가: 상위 위치의 50%를 위로 이동 */
+      right: 20px; /* 추가: 오른쪽 마진을 설정 */
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Create three unequal columns that float next to each other */
+    .column {
+      position: fixed;
+      right: 0;
+      padding: 10px;
+      top: 100px;
+      height: 90%; 
+      width: 18%;
+      
+    }
+
+    .row {
+      padding: 10px;
+      margin-top: 50px; /* .header의 높이만큼 여백 추가 */
+      background-color: #4CAF50;
+      color: white;
+      height: 5000px;
+      
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
 </head>
 <body>
 
-<h2>메인페이지 레이아웃</h2>
+  <h2>메인페이지 레이아웃</h2>
+
+  <div class="header">
+    <h2>쇼핑몰이름과 검색창</h2>
+    <!-- Add the login button here -->
+    <button class="login-button" onclick="redirectToPage()">로그인</button>
+  </div>
+
+  <div class="row" style="background-color: #4CAF50;">
+    <p>매물 게시판형식</p>
+    <div class="column side" style="background-color:#ccc;">최근 본 게시물 회원정보 인기급상승매물</div>
+  </div>
 
 
-<div class="header">
-  <h2>Header</h2>
-</div>
 
-<div class="row">
-  <div class="column side" style="background-color:#aaa;">Column</div>
-  <div class="column middle" style="background-color:#bbb;">Column</div>
-  <div class="column side" style="background-color:#ccc;">Column</div>
-</div>
-
-<div class="footer">
-  <p>Footer</p>
-</div>
+  <script>
+    function redirectToPage() {
+      // Redirect to the specified HTML file (you can change "example.html" to your desired file name)
+      window.location.href = "login.html";
+    }
+  </script>
 
 </body>
 </html>
-
-
