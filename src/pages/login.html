@@ -1,35 +1,55 @@
 <html>
     <head>
         <title> from 태그와 컨트롤 - 회원등록</title>
+        <style>
+            .log {
+                padding-top: 100px;
+                margin-top: 500px;
+            }
+            .potato
+            .signtable{
+                width: 510px;
+                margin: 0 auto;
+                text-align: center;
+                right:30px;
+            }
+            /* #body {
+                background-color: #ECD574;
+            } */
+        </style>
     </head>
-    
-    <body>
-        <br><h2><center>로그인</center></h2>
-        
+
+    <body id ="body">
+        <center><img src="/Users/blue_sea/Desktop/프론트 파일/Web_UsedTrade/src/potato.jpg" alt="이미지 설명" width="300" height="250" class="potato"></center>
+        <br><h2 style="color :#633720"><center>Welcome To Potato !</center></h2>
+        <div class="signtable">
         <form method="post" action="ex9-2.php">
             <center>
                 <table border="0" bordercolor="blue" width=700 cellspacing=1 cellpadding=5>
                     <tr>
-                        <td width=450 align=right>아이디 : </td>
-                        <td width=330>
-                            <input type="text" size="10" maxlength="10" name="id">
-                        </td>
-
                         <td width=200 align=right>성명 : </td>
                         <td width=300>
-                        <input type="text" size="10" maxlength="10" name="id">
+                        <input type="text" size="20" maxlength="10" name="id">
                         </td>
+                    </tr>
+                    <tr>
+                        <td width=450 align=right>아이디 : </td>
+                        <td width=330>
+                            <input type="text" size="20" maxlength="10" name="id">
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td align=right>비밀번호 : </td>
                         <td>
-                        <input type="password" size="10" maxlength="10" name="pw1">
+                        <input type="password" size="20" maxlength="10" name="pw1">
                         </td>
-
+                    </tr>
+                    <tr>
                         <td align=right>비밀번호 확인 :</td>
                         <td>
-                        <input type="password" size="10" maxlength="10" name="pw2">
+                        <input type="password" size="20" maxlength="10" name="pw2">
                         </td>
                     </tr>
 
@@ -48,27 +68,22 @@
                             <input type="text" size="4" name="p3" maxlength=4>
                         </td>
 
+                        
+                    </tr>
+                    <tr>
                         <td align=right> 성별 : </td>
                         <td>
                             <input type="radio" name="sex" value="남자" checked> 남
                             <input type="radio" name="sex" value="여자"> 여
+                            <input type="radio" name="sex" value="X"> 비공개 
                         </td>
                     </tr>
-
                     <tr>
-                        <td align=right> 주소 : </td>
+                        <td align=right> 이메일 : </td>
                         <td colspan="3">
-                            <input type="text" size=62 name="addr">
+                            <input type="text" size=40 name="addr">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td align=right> 남기고 싶은 글 : </td>
-                        <td colspan="3">
-                            <textarea name="memo" cols="64" rows="8"></textarea>
-                        </td>
-                    </tr>
-                    
                 </table><br>
 
                 <table border=0 width=800>
@@ -82,5 +97,7 @@
             </center>
             <input type="hidden" name="thema" value="회원등록 서식">
         </form>
+        </div>
+
     </body>
 </html>
