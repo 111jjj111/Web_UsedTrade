@@ -11,34 +11,44 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      margin: 0; /* 페이지의 기본 마진을 제거 */
     }
 
     /* Style the header */
-/* Style the header */
-  .header {
-    background-color: white;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    position: fixed; /* 변경 */
-    width: 100%; /* 변경 */
-    top: 0; /* 변경 */
-    height: 150px;
-  }
-
-
-    /* Style for login button */
-    .login-button {
-      position: absolute; /* 추가: position 속성을 absolute로 설정 */
-      top: 25%  ; /* 추가: 상위 위치를 50%로 설정 */
-      transform: translateY(-50%); /* 추가: 상위 위치의 50%를 위로 이동 */
-      right: 20px; /* 추가: 오른쪽 마진을 설정 */
+    .header {
+      background-color: white;
       padding: 10px;
-      background-color: #744529;
+      text-align: center;
+      font-size: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      height: 150px;
+      border-bottom: 2px solid #744529;
+      margin-bottom: 10px;
+      z-index: 2; /* 헤더를 다른 요소 위에 나타나도록 설정 */
+    }
+
+    .sign-up-button,
+    .login-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px 15px;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    .sign-up-button {
+      right: 30px;
+      background-color: gray;
+    }
+
+    .login-button {
+      right: 120px;
+      background-color: #744529;
     }
 
     .logo {
@@ -46,6 +56,7 @@
       margin: 0;
       padding: 0;
     }
+
     /* Create three unequal columns that float next to each other */
     .column {
       position: fixed;
@@ -54,47 +65,92 @@
       top: 150px;
       height: 90%; 
       width: 15%;
-      
-    }
-
-    .row {
-      padding: 10px;
-      margin-top: 50px; /* .header의 높이만큼 여백 추가 */
       background-color: #F6ECBB;
-      color: white;
-      height: 5000px;
-      
+      border-left: 2px inset #F6ECBB;
+      margin-left: 10px;
     }
 
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
+    .board-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 20px;
+      padding: 10px;
+      background-color: white;
+      max-width: 1000px; 
+      margin: auto;
+      margin-top: 170px;
+      margin-left: 30px;
+      height: auto;
+    
+    }
+
+    .post {
+      border: 2px solid #633720;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .logotext {
+      position: absolute;
+      top: 20%;
+      transform: translateY(-50%);
+      padding: 10px 15px;
+      color: #633720;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      left:200px;
+      font-size: 50px;
+    }
+    .board-button{
+      background-color: #744529;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 150px;
+      height: 50px;
+      margin-left: 23px;
+      margin-top: 30px;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
 
-  
-
   <div class="header">
-    <div class = "logo">
-    <img src="/Users/blue_sea/Desktop/프론트 파일/Web_UsedTrade/src/potato.jpg" alt="이미지 설명" width = "150" height = "125">
-    </div>
-    <!-- Add the login button here -->
+    <div class="logo">
+      <img src="/Users/blue_sea/Desktop/프론트 파일/Web_UsedTrade/src/potato.jpg" alt="이미지 설명" width="150" height="125">
+      <p class = "logotext">Potato Market</p>
+    </div>  
     <button class="login-button" onclick="redirectToPage()">로그인</button>
+    <button class="sign-up-button">회원가입</button>
   </div>
 
-  <div class="row" style="background-color: #F6ECBB;">
-    <p>매물 게시판형식</p>
-    <div class="column side" style="background-color:#F6ECBB;">최근 본 게시물 회원정보 인기급상승매물</div>
+  <div class="board-container">
+    <div class="column side"><button class="board-button">게시글 올리기</button></div>
+    <div class="post">
+      <h3 style="color:#633720">젤다의전설 야생의숨결 판매합니다.</h3>
+      <img src="/Users/blue_sea/Desktop/프론트 파일/Web_UsedTrade/src/IMG_4409.jpeg" alt="이미지 설명" width="400" height="375">
+      <p>젤다의전설 야생의숨결 가격 40000원 상태S급 네고 정중히 사양합니다.</p>
+    </div>
+    <div class="post">
+      <h3>게시물 제목 2</h3>
+      <img src="/Users/blue_sea/Desktop/프론트 파일/Web_UsedTrade/src/IMG_5249.jpeg" alt="이미지 설명" width="400" height="375">
+      <p>게시물 내용 Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+    <div class="post">
+      <h3>게시물 제목 3</h3>
+      <p>게시물 내용 Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+    <div class="post">
+      <h3>게시물 제목 4</h3>
+      <p>게시물 내용 Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+    <!-- More posts can be added here -->
   </div>
-
-
 
   <script>
     function redirectToPage() {
-      window.location.href = "login.html";
+      window.location.href = "file:///Users/blue_sea/Documents/GitHub/Web_UsedTrade/src/pages/login.html";
     }
   </script>
 
